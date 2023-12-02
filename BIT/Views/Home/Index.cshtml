@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Event</title>
+    <style>
+      
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        p {
+            color: white;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body >
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <img src="Images/LogoW.png" style="width: 500px; height: auto;" />
+
+</div>
+<section>
+<a asp-action="About"  class="btn btn-custom  bg-gradient py-2 btn-lg rounded-pill ">About Event</a>
+</section>
+<section>
+        <a asp-controller="Join"  asp-action="Create"  class="btn btn-custom  bg-gradient py-2 btn-lg rounded-pill ">Inscrie-te</a>
+</section>
+
+  
+<footer>
+    <p>&copy; 2023 BIT Event. All rights reserved.</p>
+</footer>
+</body>
+
+</html>
