@@ -19,11 +19,21 @@ html {
 
 
 .btn-custom {
+    font-family: 'Equinox', sans-serif;
     background-color: black;
     color: #fff; /* Set text color to white */
 }
 
 body {
+    font-family: 'Equinox', sans-serif;
     margin-bottom: 60px;
     background-image: url('../Images/bg.jpg');
+    color : blue;
+}
+
+
+@font-face {
+    font-family: 'Equinox';
+    src: url('../Fonts/Equinox Regular.otf') format('woff2'), url('/Fonts/your-font-file.woff') format('woff');
+    /* Add other font formats if necessary */
 }
