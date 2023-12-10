@@ -25,6 +25,5 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: #383434;
-    
+    background-image: url('../Images/bg.jpg');
 }
