@@ -2,7 +2,7 @@
 
 namespace BIT.Data.DbHelper
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
         private readonly ApplicationDbContext _dbContext;
