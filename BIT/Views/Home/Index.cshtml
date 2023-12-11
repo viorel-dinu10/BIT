@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIT Event</title>
     <style>
-      
         section {
             padding: 50px;
             text-align: center;
@@ -29,24 +28,48 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Additional styles for the typing effect */
+        .typing-text {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            font-size: 24px;
+            color: white;
+        }
     </style>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
-<body >
+<body>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+        <img src="Images/LogoW.png" class="fade-in" style="width: 500px; height: auto;" />
+        <h1 class="typing-text" id="typing-header">BEST Information Technology</h1>
+        <div class="btn-group d-flex align-items-center mt-3">
+            <a asp-action="About" class="btn btn-custom bg-gradient py-2 btn-lg  mb-2">LEARN MORE</a>
+        </div>
+    </div>
 
+    <script>
+        $(document).ready(function () {
+            // Hide the image and typing text initially
+            $("img.fade-in, .typing-text").hide();
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <img src="Images/LogoW.png" style="width: 500px; height: auto;"/>
+            // Fade in the image
+            $("img.fade-in").fadeIn(5000);
 
-</div>
-<section>
-    <a asp-action="About" class="btn btn-custom  bg-gradient py-2 btn-lg rounded-pill ">About Event</a>
-</section>
-<section>
-    <a asp-controller="Join" asp-action="Create" class="btn btn-custom  bg-gradient py-2 btn-lg rounded-pill ">Înscrie-te</a>
-</section>
-
-
+            // After the image is fully visible, start typing animation
+            $("img.fade-in").promise().done(function () {
+                $(".typing-text").each(function (index) {
+                    $(this).delay(index * 200).fadeIn(200);
+                });
+            });
+        });
+    </script>
 
 </body>
 

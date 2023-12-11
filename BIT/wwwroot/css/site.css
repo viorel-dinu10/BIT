@@ -20,15 +20,18 @@ html {
 
 .btn-custom {
     font-family: 'Equinox', sans-serif;
-    background-color: black;
-    color: #fff; /* Set text color to white */
+    background-color: #0b151a;
+    color: white; /* Set text color to white */
+    border-radius:
 }
 
 body {
     font-family: 'Equinox', sans-serif;
     margin-bottom: 60px;
-    background-image: url('../Images/bg.jpg');
-    color : blue;
+    background-image: url('../Images/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
 
@@ -36,4 +39,14 @@ body {
     font-family: 'Equinox';
     src: url('../Fonts/Equinox Regular.otf') format('woff2'), url('/Fonts/your-font-file.woff') format('woff');
     /* Add other font formats if necessary */
+}
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: moveBackground 20s linear infinite; /* Adjust the duration and other properties */
 }
