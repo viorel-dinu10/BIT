@@ -19,16 +19,15 @@ html {
 
 
 .btn-custom {
-    font-family: 'Equinox', sans-serif;
-    background-color: #0b151a;
-    color: white; /* Set text color to white */
-    border-radius:
+    border-block-color = white;
+    width = 50px;
 }
 
+
 body {
-    font-family: 'Equinox', sans-serif;
+   /* font-family: 'Equinox', sans-serif;*/
     margin-bottom: 60px;
-    background-image: url('../Images/bg2.jpg');
+    background-image: url('../Images/bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -49,4 +48,9 @@ body {
     width: 100%;
     height: 100%;
     animation: moveBackground 20s linear infinite; /* Adjust the duration and other properties */
+}
+
+.form-control {
+    color: white;
+    caret-color: white;
 }

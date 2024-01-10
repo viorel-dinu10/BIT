@@ -1,76 +1,20 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<div class="container">
+    <div class="row pt-5">
+        <div class="col">
+            <h1 class="card-header" style="font-size: 50px">Ce este BIT?</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIT Event</title>
-    <style>
-        section {
-            padding: 50px;
-            text-align: center;
-        }
+            <p class="" style="font-size: 22px;">BIT (BEST Information Technology) este un eveniment aflat la a noua ediție, care vine în ajutorul studenților pasionați de IT.
 
-        h2 {
-            color: blue;
-        }
+                Evenimentul aduce în fața studenților companii din domeniu pentru a le prezenta tehnologiile noi de pe piață și pentru a-i ajuta să își dezvolte competențele existente sau să dobândească unele noi în această arie. Se dorește de asemenea crearea unei strânse legături între studenți și companiile prezente prin activități de tip workshop, competiție IT, prezentare de companie sau show & tell.</p>
 
-        p {
-            color: white;
-        }
-
-        footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Additional styles for the typing effect */
-        .typing-text {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            font-size: 24px;
-            color: white;
-        }
-    </style>
-
-    <!-- Include jQuery from CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-</head>
-
-<body>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
-        <img src="Images/LogoW.png" class="fade-in" style="width: 500px; height: auto;" />
-        <h1 class="typing-text" id="typing-header">BEST Information Technology</h1>
-        <div class="btn-group d-flex align-items-center mt-3">
-            <a asp-action="About" class="btn btn-custom bg-gradient py-2 btn-lg  mb-2">LEARN MORE</a>
+        </div>
+        <div class="col pt-5 mt-5">
+            <img src="Images/LogoW.png" class="fade-in" style="width: 500px; height: auto;" />
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            // Hide the image and typing text initially
-            $("img.fade-in, .typing-text").hide();
-
-            // Fade in the image
-            $("img.fade-in").fadeIn(5000);
-
-            // After the image is fully visible, start typing animation
-            $("img.fade-in").promise().done(function () {
-                $(".typing-text").each(function (index) {
-                    $(this).delay(index * 200).fadeIn(200);
-                });
-            });
-        });
-    </script>
-
-</body>
-
-</html>
+    <div class="row mx-auto mt-4" style="width:200px">
+      
+            <a asp-controller="Pax" asp-action="Create" class="btn btn-primary btn-custom align-content-center">Inscrie-te</a>
+        
+    </div>
+</div>
