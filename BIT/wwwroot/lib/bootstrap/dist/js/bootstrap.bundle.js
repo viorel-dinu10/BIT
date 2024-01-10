@@ -1053,7 +1053,7 @@
     },
 
     focusableChildren(element) {
-      const focusables = ['a', 'button', 'input', 'textarea', 'select', 'details', '[tabindex]', '[contenteditable="true"]'].map(selector => `${selector}:not([tabindex^="-"])`).join(', ');
+      const focusables = ['a', 'button', 'input', 'textarea', 'select', 'details', '[tabindex]', '[contenteditable="true"]'].map(selector => `${selector}:not([tabindex^="-"])`).Pax(', ');
       return this.find(focusables, element).filter(el => !isDisabled(el) && isVisible(el));
     }
 
@@ -6262,7 +6262,7 @@
       this._clear();
 
       const queries = SELECTOR_LINK_ITEMS.split(',').map(selector => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`);
-      const link = SelectorEngine.findOne(queries.join(','), this._config.target);
+      const link = SelectorEngine.findOne(queries.Pax(','), this._config.target);
       link.classList.add(CLASS_NAME_ACTIVE$1);
 
       if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {

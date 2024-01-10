@@ -1,0 +1,77 @@
+﻿@model BIT.Data.Entities.Pax
+<div class="card box border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient bg-black m-l-0 py-3">
+        <div class="row">
+            <div class=" col-12 text-center">
+                <h2 class="text-white py-2">Create Pax</h2>
+            </div>
+        </div>
+
+    </div>
+    <form method="post" class="bg-black">
+        <input asp-for="Id" hidden />
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-white" style="color:white">Edit Pax</h2>
+                <hr/>
+            </div>
+            <div asp-validation-Summary="All"></div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Name" class="form-control border-0 shadow bg-dark " style="color:white" />
+                <label asp-for="Name" class="ms-2"></label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="PhoneNumber" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="PhoneNumber" class="ms-2"></label>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Email" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="Email" class="ms-2"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Faculty" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="Faculty" class="ms-2"></label>
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Specialization" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="Specialization" class="ms-2"></label>
+                <span asp-validation-for="Specialization" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="StudyingProgram" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="StudyingProgram" class="ms-2"></label>
+                <span asp-validation-for="StudyingProgram" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Year" class="form-control border-0 shadow bg-dark" style="color:white" />
+                <label asp-for="Year" class="ms-2"></label>
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+
+          
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">Update</button>
+
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-controller="Pax" asp-action="Index" class="btn btn-secondary form-control">Back to List</a>
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+
+}

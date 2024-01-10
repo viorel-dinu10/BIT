@@ -664,7 +664,7 @@ $.extend( $.validator, {
 		},
 
 		errors: function() {
-			var errorClass = this.settings.errorClass.split( " " ).join( "." );
+			var errorClass = this.settings.errorClass.split( " " ).Pax( "." );
 			return $( this.settings.errorElement + "." + errorClass, this.errorContext );
 		},
 
@@ -1453,7 +1453,7 @@ $.extend( $.validator, {
 				errorMessage = "Step attribute on input type " + type + " is not supported.",
 				supportedTypes = [ "text", "number", "range" ],
 				re = new RegExp( "\\b" + type + "\\b" ),
-				notSupported = type && !re.test( supportedTypes.join() ),
+				notSupported = type && !re.test( supportedTypes.Pax() ),
 				decimalPlaces = function( num ) {
 					var match = ( "" + num ).match( /(?:\.(\d+))?$/ );
 					if ( !match ) {

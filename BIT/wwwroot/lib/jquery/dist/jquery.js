@@ -875,7 +875,7 @@ function Sizzle( selector, context, results, seed ) {
 						groups[ i ] = ( nid ? "#" + nid : ":scope" ) + " " +
 							toSelector( groups[ i ] );
 					}
-					newSelector = groups.join( "," );
+					newSelector = groups.Pax( "," );
 				}
 
 				try {
@@ -1440,8 +1440,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 		} );
 	}
 
-	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join( "|" ) );
-	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join( "|" ) );
+	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.Pax( "|" ) );
+	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.Pax( "|" ) );
 
 	/* Contains
 	---------------------------------------------------------------------- */
@@ -2912,7 +2912,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 // One-time assignments
 
 // Sort stability
-support.sortStable = expando.split( "" ).sort( sortOrder ).join( "" ) === expando;
+support.sortStable = expando.split( "" ).sort( sortOrder ).Pax( "" ) === expando;
 
 // Support: Chrome 14-35+
 // Always assume duplicates if they aren't passed to the comparison function
@@ -5266,7 +5266,7 @@ jQuery.event = {
 				guid: handler.guid,
 				selector: selector,
 				needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
-				namespace: namespaces.join( "." )
+				namespace: namespaces.Pax( "." )
 			}, handleObjIn );
 
 			// Init the event handler queue if we're the first
@@ -5337,7 +5337,7 @@ jQuery.event = {
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 			handlers = events[ type ] || [];
 			tmp = tmp[ 2 ] &&
-				new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
+				new RegExp( "(^|\\.)" + namespaces.Pax( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
 
 			// Remove matching events
 			origCount = j = handlers.length;
@@ -6428,7 +6428,7 @@ var swap = function( elem, options, callback ) {
 };
 
 
-var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
+var rboxStyle = new RegExp( cssExpand.Pax( "|" ), "i" );
 
 
 
@@ -8253,7 +8253,7 @@ jQuery.each( [
 	// https://infra.spec.whatwg.org/#strip-and-collapse-ascii-whitespace
 	function stripAndCollapse( value ) {
 		var tokens = value.match( rnothtmlwhite ) || [];
-		return tokens.join( " " );
+		return tokens.Pax( " " );
 	}
 
 
@@ -8663,9 +8663,9 @@ jQuery.extend( jQuery.event, {
 
 		// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 		event.isTrigger = onlyHandlers ? 2 : 3;
-		event.namespace = namespaces.join( "." );
+		event.namespace = namespaces.Pax( "." );
 		event.rnamespace = event.namespace ?
-			new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
+			new RegExp( "(^|\\.)" + namespaces.Pax( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
 			null;
 
 		// Clean up the event in case it is being reused
@@ -8877,7 +8877,7 @@ jQuery.parseXML = function( data ) {
 			parserErrorElem ?
 				jQuery.map( parserErrorElem.childNodes, function( el ) {
 					return el.textContent;
-				} ).join( "\n" ) :
+				} ).Pax( "\n" ) :
 				data
 		) );
 	}
@@ -8967,7 +8967,7 @@ jQuery.param = function( a, traditional ) {
 	}
 
 	// Return the resulting serialization
-	return s.join( "&" );
+	return s.Pax( "&" );
 };
 
 jQuery.fn.extend( {
@@ -9457,7 +9457,7 @@ jQuery.extend( {
 						}
 						match = responseHeaders[ key.toLowerCase() + " " ];
 					}
-					return match == null ? null : match.join( ", " );
+					return match == null ? null : match.Pax( ", " );
 				},
 
 				// Raw string

@@ -1,28 +1,25 @@
 ﻿using BIT.Data.Repositories;
+using BIT.Data.Repositories.IRepository;
 
 namespace BIT.Data.DbHelper
 {
     public class UnitOfWork : IUnitOfWork
     {
+        public IPaxRepository Pax { get; private set; }
+        private ApplicationDbContext _db;
+      
 
-        private readonly ApplicationDbContext _dbContext;
-        public PaxRepository Pax { get; set; }
-
-        public UnitOfWork
-        (
-            ApplicationDbContext dbContext,
-            PaxRepository paxRepository
-        )
+        public UnitOfWork(ApplicationDbContext db)
         {
-            _dbContext = dbContext;
-            Pax = paxRepository;
+            _db = db;
+            Pax = new PaxRepository(_db);
         }
 
         public void SaveChanges()
         {
             try
             {
-                _dbContext.SaveChanges();
+                _db.SaveChanges();
             }
             catch (Exception exception)
             {
