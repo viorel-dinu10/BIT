@@ -1,7 +1,9 @@
 ﻿using BIT.Data.DbHelper;
 using BIT.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace BIT.Controllers
 {
@@ -17,7 +19,7 @@ namespace BIT.Controllers
         }
 
         #endregion
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             List<Pax> objPaxList = _unitOfWork.Pax.GetAll().ToList();
@@ -48,7 +50,7 @@ namespace BIT.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -65,7 +67,7 @@ namespace BIT.Controllers
             return View(paxFromDb);
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
 
         public IActionResult Edit(Pax pax)
@@ -79,7 +81,7 @@ namespace BIT.Controllers
 
           
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
@@ -99,7 +101,7 @@ namespace BIT.Controllers
 
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePost(int? id)
         {
